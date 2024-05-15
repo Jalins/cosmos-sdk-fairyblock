@@ -11,7 +11,7 @@ import (
 
 // BeginBlocker of epochs module.
 func (k Keeper) BeginBlocker(ctx context.Context) error {
-	defer telemetry.ModuleMeasureSince(types.ModuleName, telemetry.Now(), telemetry.MetricKeyBeginBlocker)
+	//defer telemetry.ModuleMeasureSince(types.ModuleName, telemetry.Now(), telemetry.MetricKeyBeginBlocker)
 
 	headerInfo := k.HeaderService.HeaderInfo(ctx)
 	err := k.EpochInfo.Walk(

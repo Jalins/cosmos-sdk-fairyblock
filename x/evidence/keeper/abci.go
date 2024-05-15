@@ -6,14 +6,12 @@ import (
 
 	"cosmossdk.io/core/comet"
 	"cosmossdk.io/x/evidence/types"
-
-	"github.com/cosmos/cosmos-sdk/telemetry"
 )
 
 // BeginBlocker iterates through and handles any newly discovered evidence of
 // misbehavior submitted by CometBFT. Currently, only equivocation is handled.
 func (k Keeper) BeginBlocker(ctx context.Context, cometService comet.Service) error {
-	defer telemetry.ModuleMeasureSince(types.ModuleName, telemetry.Now(), telemetry.MetricKeyBeginBlocker)
+	//defer telemetry.ModuleMeasureSince(types.ModuleName, telemetry.Now(), telemetry.MetricKeyBeginBlocker)
 
 	bi := cometService.CometInfo(ctx)
 

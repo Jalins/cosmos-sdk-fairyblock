@@ -14,13 +14,12 @@ import (
 	"cosmossdk.io/x/gov/types"
 	v1 "cosmossdk.io/x/gov/types/v1"
 
-	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 // EndBlocker is called every block.
 func (k Keeper) EndBlocker(ctx context.Context) error {
-	defer telemetry.ModuleMeasureSince(types.ModuleName, telemetry.Now(), telemetry.MetricKeyEndBlocker)
+	//defer telemetry.ModuleMeasureSince(types.ModuleName, telemetry.Now(), telemetry.MetricKeyEndBlocker)
 
 	// delete dead proposals from store and returns theirs deposits.
 	// A proposal is dead when it's inactive and didn't get enough deposit on time to get into voting phase.
